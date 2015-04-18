@@ -4,6 +4,7 @@ using System.Collections;
 public class PlayerController : MonoBehaviour {
 
 	private bool jump = false;
+	private bool jumpAvailable = false;
 	private Rigidbody2D rigidBody;
 	public float maxSpeed;
 	public float moveForce;
@@ -12,7 +13,7 @@ public class PlayerController : MonoBehaviour {
 	// Grounded doo doo
 	private bool grounded = false;
 	public Transform groundCheck;
-	public float groundRadius = 0.2f;
+	public float groundRadius = 0.1f;
 	public LayerMask whatIsGround;
 
 
@@ -23,15 +24,17 @@ public class PlayerController : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		// Maybe uh, change this you dummy
-		if (grounded && Input.GetAxis("Jump") > 0) {
-			rigidBody.AddForce(Vector2.up * jumpForce);
+		// Check if on the ground
+		grounded = Physics2D.Linecast(transform.position, groundCheck.position, whatIsGround);
+		if (Input.GetAxis ("Jump") <= 0) {
+			jumpAvailable = true;
+		}
+		if (grounded && Input.GetAxis ("Jump") > 0 && !jump && jumpAvailable) {
+			jump = true;
 		}
 	}
 
 	void FixedUpdate () {
-		// Check if on the ground
-		grounded = Physics2D.OverlapCircle(groundCheck.position, groundRadius, whatIsGround);
 
 		// cache horizontal
 		float h = Input.GetAxis("HorizontalPlayer");
@@ -40,6 +43,17 @@ public class PlayerController : MonoBehaviour {
 			rigidBody.velocity = Vector3.zero;
 
 		}
+
+		
+		// Maybe uh, change this you dummy
+		if (jump) {
+			rigidBody.velocity = new Vector2(rigidBody.velocity.x, 0);
+			print(rigidBody.velocity);
+			rigidBody.AddForce(Vector2.up * jumpForce);
+			jump = false;
+			jumpAvailable = false;
+		}
+
 		if (h * rigidBody.velocity.x < maxSpeed) {
 			rigidBody.AddForce(Vector2.right * h * moveForce);
 		}
