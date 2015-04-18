@@ -46,11 +46,9 @@ public class PlayerController : MonoBehaviour {
 			gameController.modifyScore(1);
 		}
 
-		
-		// Maybe uh, change this you dummy
+		// jumps yo
 		if (jump) {
 			rigidBody.velocity = new Vector2(rigidBody.velocity.x, 0);
-			print(rigidBody.velocity);
 			rigidBody.AddForce(Vector2.up * jumpForce);
 			jump = false;
 			jumpAvailable = false;

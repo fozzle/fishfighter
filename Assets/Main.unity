@@ -96,7 +96,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 27598786}
   m_Layer: 8
-  m_Name: GroundCheck
+  m_Name: GroundCheckLeft
   m_TagString: Untagged
   m_Icon: {fileID: 3936346786652291628, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -109,7 +109,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 27598785}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -.125, z: 0}
+  m_LocalPosition: {x: -.0670000017, y: -.0860000029, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 473120835}
@@ -154,9 +154,9 @@ PlatformEffector2D:
   m_ColliderMask:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_OneWay: 1
-  m_SideFriction: 0
-  m_SideBounce: 0
+  m_UseOneWay: 1
+  m_UseSideFriction: 0
+  m_UseSideBounce: 0
   m_SideAngleVariance: 0
 --- !u!61 &31688846
 BoxCollider2D:
@@ -267,7 +267,7 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b556c574cdeb84c33bb5c80d42e67f3b, type: 2}
   m_IsPrefabParent: 0
---- !u!4 &98957814
+--- !u!4 &98957814 stripped
 Transform:
   m_PrefabParentObject: {fileID: 483254, guid: b556c574cdeb84c33bb5c80d42e67f3b, type: 2}
   m_PrefabInternal: {fileID: 98957813}
@@ -342,6 +342,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 27598786}
+  - {fileID: 1089368629}
   - {fileID: 1691570602}
   m_Father: {fileID: 0}
   m_RootOrder: 1
@@ -359,11 +360,13 @@ MonoBehaviour:
   maxSpeed: 10
   moveForce: 7
   jumpForce: 250
-  groundCheck: {fileID: 27598786}
+  groundCheckLeft: {fileID: 27598786}
+  groundCheckRight: {fileID: 1089368629}
   groundRadius: .200000003
   whatIsGround:
     serializedVersion: 2
     m_Bits: 1
+  gameController: {fileID: 0}
 --- !u!61 &473120837
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -374,9 +377,9 @@ BoxCollider2D:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_UsedByEffector: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: -0, y: 0}
   serializedVersion: 2
-  m_Size: {x: .159999996, y: .159999996}
+  m_Size: {x: .100000001, y: .100000001}
 --- !u!1 &606679142
 GameObject:
   m_ObjectHideFlags: 0
@@ -443,9 +446,9 @@ PlatformEffector2D:
   m_ColliderMask:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_OneWay: 1
-  m_SideFriction: 0
-  m_SideBounce: 0
+  m_UseOneWay: 1
+  m_UseSideFriction: 0
+  m_UseSideBounce: 0
   m_SideAngleVariance: 0
 --- !u!61 &606679146
 BoxCollider2D:
@@ -615,9 +618,9 @@ PlatformEffector2D:
   m_ColliderMask:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_OneWay: 1
-  m_SideFriction: 0
-  m_SideBounce: 0
+  m_UseOneWay: 1
+  m_UseSideFriction: 0
+  m_UseSideBounce: 0
   m_SideAngleVariance: 0
 --- !u!61 &1000641794
 BoxCollider2D:
@@ -658,6 +661,33 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: d6ccebcb9a2a9594f980bda944759e09, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
+--- !u!1 &1089368628
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1089368629}
+  m_Layer: 8
+  m_Name: GroundCheckRight
+  m_TagString: Untagged
+  m_Icon: {fileID: 3936346786652291628, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1089368629
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1089368628}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: .0670000017, y: -.0860000029, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 473120835}
+  m_RootOrder: 1
 --- !u!1 &1253930972
 GameObject:
   m_ObjectHideFlags: 0
@@ -754,7 +784,7 @@ Transform:
   m_Children:
   - {fileID: 1253930974}
   m_Father: {fileID: 473120835}
-  m_RootOrder: 1
+  m_RootOrder: 2
 --- !u!1 &1842528553
 GameObject:
   m_ObjectHideFlags: 0
@@ -783,9 +813,9 @@ PlatformEffector2D:
   m_ColliderMask:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_OneWay: 1
-  m_SideFriction: 0
-  m_SideBounce: 0
+  m_UseOneWay: 1
+  m_UseSideFriction: 0
+  m_UseSideBounce: 0
   m_SideAngleVariance: 0
 --- !u!61 &1842528555
 BoxCollider2D:

@@ -11,8 +11,7 @@ public class GameController : MonoBehaviour {
 	void Start () {
 		myTextgameObject = GameObject.Find("ScoreText");
 		ourComponent = myTextgameObject.GetComponent<Text>();
-		score = 10;
-		ourComponent.text = score.ToString();
+		updateScore(0);
 	}
 	
 	// Update is called once per frame
@@ -21,7 +20,10 @@ public class GameController : MonoBehaviour {
 	}
 
 	public void modifyScore(int modifier){
-		score += modifier;
+		updateScore(score + modifier);
+	}
+
+	void updateScore(int newScore){
 		ourComponent.text = score.ToString();
 	}
 }
