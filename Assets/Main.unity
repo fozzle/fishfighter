@@ -123,8 +123,8 @@ GameObject:
   m_Component:
   - 4: {fileID: 31688844}
   - 212: {fileID: 31688847}
-  - 61: {fileID: 31688846}
   - 251: {fileID: 31688845}
+  - 61: {fileID: 31688846}
   m_Layer: 0
   m_Name: Floor M
   m_TagString: Untagged
@@ -154,9 +154,9 @@ PlatformEffector2D:
   m_ColliderMask:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_UseOneWay: 1
-  m_UseSideFriction: 0
-  m_UseSideBounce: 0
+  m_OneWay: 1
+  m_SideFriction: 0
+  m_SideBounce: 0
   m_SideAngleVariance: 0
 --- !u!61 &31688846
 BoxCollider2D:
@@ -197,6 +197,80 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: d6ccebcb9a2a9594f980bda944759e09, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
+--- !u!1001 &98957813
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1253930974}
+    m_Modifications:
+    - target: {fileID: 483254, guid: b556c574cdeb84c33bb5c80d42e67f3b, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: -1.12
+      objectReference: {fileID: 0}
+    - target: {fileID: 483254, guid: b556c574cdeb84c33bb5c80d42e67f3b, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: .714000046
+      objectReference: {fileID: 0}
+    - target: {fileID: 483254, guid: b556c574cdeb84c33bb5c80d42e67f3b, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 483254, guid: b556c574cdeb84c33bb5c80d42e67f3b, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 483254, guid: b556c574cdeb84c33bb5c80d42e67f3b, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 483254, guid: b556c574cdeb84c33bb5c80d42e67f3b, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: .709538996
+      objectReference: {fileID: 0}
+    - target: {fileID: 483254, guid: b556c574cdeb84c33bb5c80d42e67f3b, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: .704666197
+      objectReference: {fileID: 0}
+    - target: {fileID: 483254, guid: b556c574cdeb84c33bb5c80d42e67f3b, type: 2}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 165820, guid: b556c574cdeb84c33bb5c80d42e67f3b, type: 2}
+      propertyPath: m_Name
+      value: Fish 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 483254, guid: b556c574cdeb84c33bb5c80d42e67f3b, type: 2}
+      propertyPath: m_LocalScale.x
+      value: .350300252
+      objectReference: {fileID: 0}
+    - target: {fileID: 483254, guid: b556c574cdeb84c33bb5c80d42e67f3b, type: 2}
+      propertyPath: m_LocalScale.y
+      value: 1.07218874
+      objectReference: {fileID: 0}
+    - target: {fileID: 165820, guid: b556c574cdeb84c33bb5c80d42e67f3b, type: 2}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 148256, guid: b556c574cdeb84c33bb5c80d42e67f3b, type: 2}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 174706, guid: b556c574cdeb84c33bb5c80d42e67f3b, type: 2}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 113330, guid: b556c574cdeb84c33bb5c80d42e67f3b, type: 2}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: b556c574cdeb84c33bb5c80d42e67f3b, type: 2}
+  m_IsPrefabParent: 0
+--- !u!4 &98957814
+Transform:
+  m_PrefabParentObject: {fileID: 483254, guid: b556c574cdeb84c33bb5c80d42e67f3b, type: 2}
+  m_PrefabInternal: {fileID: 98957813}
 --- !u!1 &473120832
 GameObject:
   m_ObjectHideFlags: 0
@@ -369,9 +443,9 @@ PlatformEffector2D:
   m_ColliderMask:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_UseOneWay: 1
-  m_UseSideFriction: 0
-  m_UseSideBounce: 0
+  m_OneWay: 1
+  m_SideFriction: 0
+  m_SideBounce: 0
   m_SideAngleVariance: 0
 --- !u!61 &606679146
 BoxCollider2D:
@@ -541,9 +615,9 @@ PlatformEffector2D:
   m_ColliderMask:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_UseOneWay: 1
-  m_UseSideFriction: 0
-  m_UseSideBounce: 0
+  m_OneWay: 1
+  m_SideFriction: 0
+  m_SideBounce: 0
   m_SideAngleVariance: 0
 --- !u!61 &1000641794
 BoxCollider2D:
@@ -635,7 +709,8 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: .200000003, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 98957814}
   m_Father: {fileID: 1691570602}
   m_RootOrder: 0
 --- !u!114 &1253930975
@@ -650,7 +725,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   parentTransform: {fileID: 0}
-  rotationSpeed: 100
+  rotationSpeed: 350
 --- !u!1 &1691570601
 GameObject:
   m_ObjectHideFlags: 0
@@ -708,9 +783,9 @@ PlatformEffector2D:
   m_ColliderMask:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_UseOneWay: 1
-  m_UseSideFriction: 0
-  m_UseSideBounce: 0
+  m_OneWay: 1
+  m_SideFriction: 0
+  m_SideBounce: 0
   m_SideAngleVariance: 0
 --- !u!61 &1842528555
 BoxCollider2D:
