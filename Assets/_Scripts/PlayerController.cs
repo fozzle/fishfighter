@@ -12,7 +12,7 @@ public class PlayerController : MonoBehaviour {
 	// Grounded doo doo
 	private bool grounded = false;
 	public Transform groundCheck;
-	float groundRadius = 0.2f;
+	public float groundRadius = 0.2f;
 	public LayerMask whatIsGround;
 
 
@@ -25,7 +25,6 @@ public class PlayerController : MonoBehaviour {
 	void Update () {
 		// Maybe uh, change this you dummy
 		if (grounded && Input.GetKeyDown(KeyCode.UpArrow)) {
-			Debug.Log ("Jump!");
 			rigidBody.AddForce(Vector2.up * jumpForce);
 		}
 	}

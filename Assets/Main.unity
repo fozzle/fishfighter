@@ -198,10 +198,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 34e1d8687adc0436d964436e31003cb7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxSpeed: 15
-  moveForce: 8
-  jumpForce: 100
+  maxSpeed: 10
+  moveForce: 7
+  jumpForce: 200
   groundCheck: {fileID: 27598786}
+  groundRadius: .200000003
   whatIsGround:
     serializedVersion: 2
     m_Bits: 4294967295
@@ -278,7 +279,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 5
+  orthographic size: 2
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
