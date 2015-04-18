@@ -12,7 +12,7 @@ public class PlayerController : MonoBehaviour {
 	// Grounded doo doo
 	private bool grounded = false;
 	public Transform groundCheck;
-	public float groundRadius = 0.0f;
+	public float groundRadius = 0.2f;
 	public LayerMask whatIsGround;
 
 
@@ -24,7 +24,7 @@ public class PlayerController : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		// Maybe uh, change this you dummy
-		if (grounded && Input.GetKeyDown(KeyCode.UpArrow)) {
+		if (grounded && Input.GetAxis("Jump") > 0) {
 			rigidBody.AddForce(Vector2.up * jumpForce);
 		}
 	}
@@ -32,9 +32,9 @@ public class PlayerController : MonoBehaviour {
 	void FixedUpdate () {
 		// Check if on the ground
 		grounded = Physics2D.OverlapCircle(groundCheck.position, groundRadius, whatIsGround);
-		Debug.Log (grounded);
+
 		// cache horizontal
-		float h = Input.GetAxis("Horizontal");
+		float h = Input.GetAxis("HorizontalPlayer");
 		if (rigidBody.position.y < -4.0) {
 			rigidBody.position = new Vector3(0,1,0);
 			rigidBody.velocity = Vector3.zero;
