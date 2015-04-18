@@ -4,6 +4,7 @@ using System.Collections;
 public class PlayerController : MonoBehaviour {
 
 	private bool jump = false;
+	private bool jumpAvailable = false;
 	private Rigidbody2D rigidBody;
 	public float maxSpeed;
 	public float moveForce;
@@ -25,7 +26,10 @@ public class PlayerController : MonoBehaviour {
 	void Update () {
 		// Check if on the ground
 		grounded = Physics2D.Linecast(transform.position, groundCheck.position, whatIsGround);
-		if (grounded && Input.GetAxis ("Jump") > 0 && !jump) {
+		if (Input.GetAxis ("Jump") <= 0) {
+			jumpAvailable = true;
+		}
+		if (grounded && Input.GetAxis ("Jump") > 0 && !jump && jumpAvailable) {
 			jump = true;
 		}
 	}
@@ -47,6 +51,7 @@ public class PlayerController : MonoBehaviour {
 			print(rigidBody.velocity);
 			rigidBody.AddForce(Vector2.up * jumpForce);
 			jump = false;
+			jumpAvailable = false;
 		}
 
 		if (h * rigidBody.velocity.x < maxSpeed) {
