@@ -24,6 +24,7 @@ public class GameController : MonoBehaviour {
 	}
 
 	void updateScore(int newScore){
+		score = newScore;
 		ourComponent.text = score.ToString();
 	}
 }
