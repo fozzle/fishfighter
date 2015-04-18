@@ -21,7 +21,11 @@ public class PlayerController : MonoBehaviour {
 	void FixedUpdate () {
 		// cache horizontal
 		float h = Input.GetAxis("Horizontal");
+		if (rigidBody.position.y < -4.0) {
+			rigidBody.position = new Vector3(0,1,0);
+			rigidBody.velocity = Vector3.zero;
 
+		}
 		if (h * rigidBody.velocity.x < maxSpeed) {
 			rigidBody.AddForce(Vector2.right * h * moveForce);
 		}
