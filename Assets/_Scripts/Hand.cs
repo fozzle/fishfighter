@@ -14,8 +14,19 @@ public class Hand : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		Vector3 inputDirection = new Vector3(Input.GetAxis ("HorizontalArm"), Input.GetAxis ("VerticalArm"), 0);
 
-		transform.RotateAround(new Vector3(parentTransform.position.x, parentTransform.position.y, 0), inputDirection, rotationSpeed * Time.deltaTime);
+
+	}
+
+	void FixedUpdate() {
+		float hInput = Input.GetAxis("HorizontalArm");
+		float vInput = Input.GetAxis ("VerticalArm");
+		if (hInput == 0 && vInput == 0) {
+			return;
+		}
+
+		float angle = -Mathf.Atan2(hInput, vInput);
+		Debug.Log(angle * Mathf.Rad2Deg);
+		transform.rotation = Quaternion.RotateTowards(transform.rotation, Quaternion.Euler(0, 0, angle * Mathf.Rad2Deg), rotationSpeed * Time.deltaTime);
 	}
 }
