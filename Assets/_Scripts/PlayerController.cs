@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+
 public class PlayerController : MonoBehaviour {
 
 	private bool jump = false;
@@ -12,10 +13,11 @@ public class PlayerController : MonoBehaviour {
 
 	// Grounded doo doo
 	private bool grounded = false;
-	public Transform groundCheck;
+	public Transform groundCheckLeft;
+	public Transform groundCheckRight;
 	public float groundRadius = 0.1f;
 	public LayerMask whatIsGround;
-
+	public GameController gameController;
 
 	// Use this for initialization
 	void Start () {
@@ -25,7 +27,7 @@ public class PlayerController : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		// Check if on the ground
-		grounded = Physics2D.Linecast(transform.position, groundCheck.position, whatIsGround);
+		grounded = Physics2D.Linecast(transform.position, groundCheckLeft.position, whatIsGround) || Physics2D.Linecast(transform.position, groundCheckRight.position, whatIsGround);
 		if (Input.GetAxis ("Jump") <= 0) {
 			jumpAvailable = true;
 		}
@@ -42,11 +44,10 @@ public class PlayerController : MonoBehaviour {
 		if (rigidBody.position.y < -4.0) {
 			rigidBody.position = new Vector3(0,1,0);
 			rigidBody.velocity = Vector3.zero;
-
+			gameController.modifyScore(1);
 		}
 
-		
-		// Maybe uh, change this you dummy
+		// jumps yo
 		if (jump) {
 			rigidBody.velocity = new Vector2(rigidBody.velocity.x, 0);
 			rigidBody.AddForce(Vector2.up * jumpForce);
