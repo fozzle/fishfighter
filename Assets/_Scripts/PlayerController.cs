@@ -12,7 +12,7 @@ public class PlayerController : MonoBehaviour {
 	// Grounded doo doo
 	private bool grounded = false;
 	public Transform groundCheck;
-	public float groundRadius = 0.2f;
+	public float groundRadius = 0.0f;
 	public LayerMask whatIsGround;
 
 
