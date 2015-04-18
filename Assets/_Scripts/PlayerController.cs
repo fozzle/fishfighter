@@ -38,6 +38,7 @@ public class PlayerController : MonoBehaviour {
 
 		// cache horizontal
 		float h = Input.GetAxis("HorizontalPlayer");
+		Debug.Log (h);
 		if (rigidBody.position.y < -4.0) {
 			rigidBody.position = new Vector3(0,1,0);
 			rigidBody.velocity = Vector3.zero;
@@ -48,7 +49,6 @@ public class PlayerController : MonoBehaviour {
 		// Maybe uh, change this you dummy
 		if (jump) {
 			rigidBody.velocity = new Vector2(rigidBody.velocity.x, 0);
-			print(rigidBody.velocity);
 			rigidBody.AddForce(Vector2.up * jumpForce);
 			jump = false;
 			jumpAvailable = false;

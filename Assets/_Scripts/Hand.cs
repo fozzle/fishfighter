@@ -26,7 +26,6 @@ public class Hand : MonoBehaviour {
 		}
 
 		float angle = -Mathf.Atan2(hInput, vInput);
-		Debug.Log(angle * Mathf.Rad2Deg);
 		transform.rotation = Quaternion.RotateTowards(transform.rotation, Quaternion.Euler(0, 0, angle * Mathf.Rad2Deg), rotationSpeed * Time.deltaTime);
 	}
 }
