@@ -505,7 +505,7 @@ Rigidbody2D:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 473120832}
-  m_Mass: 1
+  m_Mass: .5
   m_LinearDrag: 0
   m_AngularDrag: .0500000007
   m_GravityScale: 1
@@ -566,9 +566,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 34e1d8687adc0436d964436e31003cb7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxSpeed: 10
-  moveForce: 7
-  jumpForce: 250
+  maxSpeed: 6
+  moveForce: 4
+  jumpForce: 125
   groundCheckLeft: {fileID: 27598786}
   groundCheckRight: {fileID: 1089368629}
   groundRadius: .200000003
@@ -1180,10 +1180,10 @@ SliderJoint2D:
   m_ConnectedAnchor: {x: 0, y: 0}
   serializedVersion: 2
   m_Angle: 90
-  m_UseMotor: 0
+  m_UseMotor: 1
   m_Motor:
-    m_MotorSpeed: 0
-    m_MaximumMotorForce: 10000
+    m_MotorSpeed: -2000
+    m_MaximumMotorForce: 60
   m_UseLimits: 1
   m_TranslationLimits:
     m_LowerTranslation: 0
@@ -1209,7 +1209,7 @@ SpringJoint2D:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1253930972}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EnableCollision: 0
   m_ConnectedRigidBody: {fileID: 1002063785}
   m_Anchor: {x: 0, y: 0}
