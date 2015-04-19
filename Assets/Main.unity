@@ -880,7 +880,7 @@ Rigidbody2D:
   m_Mass: 4
   m_LinearDrag: 0
   m_AngularDrag: .0500000007
-  m_GravityScale: 1
+  m_GravityScale: .100000001
   m_FixedAngle: 0
   m_IsKinematic: 0
   m_Interpolate: 0
@@ -1008,9 +1008,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b013b13b5cc4846dc9b8043c873887d0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stabForceBaseMagnitude: 0
-  fish: {fileID: 0}
-  stabForceMultiplier: 0
+  stabForceBaseMagnitude: 20
+  fish: {fileID: 1002063782}
+  stabForceMultiplier: 200
   rotationSpeed: 500
 --- !u!234 &1253930976
 SliderJoint2D:
@@ -1039,7 +1039,7 @@ Rigidbody2D:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1253930972}
-  m_Mass: 1
+  m_Mass: .5
   m_LinearDrag: 0
   m_AngularDrag: .0500000007
   m_GravityScale: 1
@@ -1119,7 +1119,7 @@ MonoBehaviour:
   spawnTime: 3
   spawnDelay: 0
   fishOptions:
-  - {fileID: 0}
+  - {fileID: 159142, guid: cd7f367e8b65e8841a73599a0b539a95, type: 2}
   spawnTransforms:
   - {fileID: 1867795929}
   - {fileID: 797450098}
