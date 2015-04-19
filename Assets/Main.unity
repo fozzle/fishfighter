@@ -449,6 +449,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 1
   gameController: {fileID: 1687920106}
+  hookPrefab: {fileID: 151646, guid: c9d398328a397f140a5f2bb173fd3b77, type: 2}
 --- !u!61 &473120837
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -650,7 +651,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 797450098}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: FishSpawnRight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1100,7 +1101,7 @@ GameObject:
   - 4: {fileID: 1687920107}
   - 114: {fileID: 1687920106}
   - 114: {fileID: 1687920108}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: GameObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1189,7 +1190,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 1698132357}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: FishSpawnMiddle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1299,7 +1300,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 1867795929}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: FishSpawnLeft
   m_TagString: Untagged
   m_Icon: {fileID: 0}

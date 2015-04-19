@@ -19,9 +19,14 @@ public class PlayerController : MonoBehaviour {
 	public LayerMask whatIsGround;
 	public GameController gameController;
 
+	public GameObject hookPrefab;
+	private Hook hook;
 	// Use this for initialization
 	void Start () {
 		rigidBody = GetComponent<Rigidbody2D>();
+		Vector3 hookPosition = new Vector3 (-0.04f, -0.58f, 0f);
+		GameObject hookGameObject = (GameObject) Instantiate(hookPrefab, hookPosition, transform.rotation);
+		hook = hookGameObject.GetComponent (typeof(Hook)) as Hook ;
 	}
 	
 	// Update is called once per frame
@@ -35,6 +40,7 @@ public class PlayerController : MonoBehaviour {
 			jump = true;
 		}
 	}
+
 
 	void FixedUpdate () {
 

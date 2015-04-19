@@ -38,7 +38,7 @@ public class Spawner : MonoBehaviour
 	{
 		// Instantiate a random enemy.
 		int enemyIndex = Random.Range(0, fishOptions.Length);
-		int spawnerIndex = Random.Range (0, spawnTransforms.Length);
+//		int spawnerIndex = Random.Range (0, spawnTransforms.Length);
 
 		GameObject fish = ( GameObject) Instantiate(fishOptions[enemyIndex], newPosition, transform.rotation);
 		SpawnedFish fishScript = fish.GetComponent (typeof(SpawnedFish)) as SpawnedFish ;

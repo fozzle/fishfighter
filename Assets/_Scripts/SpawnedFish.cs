@@ -38,4 +38,8 @@ public class SpawnedFish : MonoBehaviour {
 		float newScale = .5f + (.3f * (float)newSize);
 		transform.localScale = new Vector2( newScale * transform.localScale.x, newScale * transform.localScale.y);
 	}
+
+	public void onHooked(){
+		Debug.Log (name + " was hooked!");
+	}
 }
