@@ -1003,7 +1003,7 @@ SliderJoint2D:
   m_UseLimits: 1
   m_TranslationLimits:
     m_LowerTranslation: 0
-    m_UpperTranslation: 1
+    m_UpperTranslation: 1.5
 --- !u!50 &1253930977
 Rigidbody2D:
   m_ObjectHideFlags: 0
@@ -1032,7 +1032,7 @@ SpringJoint2D:
   m_ConnectedAnchor: {x: 0, y: 0}
   m_Distance: .200000003
   m_DampingRatio: .180000007
-  m_Frequency: 1
+  m_Frequency: 1.47000003
 --- !u!1 &1687920105
 GameObject:
   m_ObjectHideFlags: 0
