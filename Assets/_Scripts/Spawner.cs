@@ -23,11 +23,9 @@ public class Spawner : MonoBehaviour
 				int slot = spawnCount + 1;
 				float xPos = ((float)slot * split) + (-.5f * range);
 
-				float yPos = .5f +(-1.25f * size);
+				float yPos = -1f * (.5f + (Random.value * .75f) +(1f * size));
 
 				Vector2 newPosition = new Vector2( xPos, yPos);
-
-
 
 				Spawn (size, newPosition);
 			}

@@ -24,7 +24,7 @@ public class PlayerController : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		rigidBody = GetComponent<Rigidbody2D>();
-		Vector3 hookPosition = new Vector3 (-0.04f, -0.58f, 0f);
+		Vector3 hookPosition = new Vector3 (0, -2f, 0f);
 		GameObject hookGameObject = (GameObject) Instantiate(hookPrefab, hookPosition, transform.rotation);
 		hook = hookGameObject.GetComponent (typeof(Hook)) as Hook ;
 	}
@@ -48,7 +48,7 @@ public class PlayerController : MonoBehaviour {
 		// cache horizontal
 		float h = Input.GetAxis("HorizontalPlayer")+Input.GetAxis("HorizontalKeys");
 		//Debug.Log (h);
-		if (rigidBody.position.y < -4.0) {
+		if (rigidBody.position.y < -5.0) {
 			rigidBody.position = new Vector3(0,1,0);
 			rigidBody.velocity = Vector3.zero;
 			gameController.modifyScore(1);
