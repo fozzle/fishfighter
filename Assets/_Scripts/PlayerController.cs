@@ -7,6 +7,7 @@ public class PlayerController : MonoBehaviour {
 	private bool jump = false;
 	private bool jumpAvailable = false;
 	private Rigidbody2D rigidBody;
+	private Animator anim;
 	public float maxSpeed;
 	public float moveForce;
 	public float jumpForce;
@@ -27,6 +28,7 @@ public class PlayerController : MonoBehaviour {
 		Vector3 hookPosition = new Vector3 (0, -2f, 0f);
 		GameObject hookGameObject = (GameObject) Instantiate(hookPrefab, hookPosition, transform.rotation);
 		hook = hookGameObject.GetComponent (typeof(Hook)) as Hook ;
+		anim = GetComponent<Animator>();
 	}
 	
 	// Update is called once per frame
@@ -47,6 +49,9 @@ public class PlayerController : MonoBehaviour {
 
 		// cache horizontal
 		float h = Input.GetAxis("HorizontalPlayer")+Input.GetAxis("HorizontalKeys");
+
+		anim.SetFloat("Speed", Mathf.Abs(h));
+
 		//Debug.Log (h);
 		if (rigidBody.position.y < -5.0) {
 			rigidBody.position = new Vector3(0,1,0);
