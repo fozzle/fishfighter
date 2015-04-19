@@ -306,7 +306,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
     m_FontSize: 60
@@ -453,8 +453,8 @@ GameObject:
   - 4: {fileID: 606679144}
   - 212: {fileID: 606679143}
   - 61: {fileID: 606679146}
-  - 61: {fileID: 606679147}
-  - 61: {fileID: 606679145}
+  - 60: {fileID: 606679148}
+  - 60: {fileID: 606679145}
   m_Layer: 0
   m_Name: Floor
   m_TagString: Untagged
@@ -500,19 +500,25 @@ Transform:
   m_Children: []
   m_Father: {fileID: 950723793}
   m_RootOrder: 0
---- !u!61 &606679145
-BoxCollider2D:
+--- !u!60 &606679145
+PolygonCollider2D:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 606679142}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_UsedByEffector: 0
-  m_Offset: {x: -2.16091728, y: .164815664}
-  serializedVersion: 2
-  m_Size: {x: 2.47406387, y: .278836489}
+  m_Offset: {x: 0, y: 0}
+  m_Points:
+    m_Paths:
+    - - {x: -5.9369812, y: .712781072}
+      - {x: -5.74268436, y: .05064895}
+      - {x: -.724112511, y: .0109420568}
+    - - {x: 5.57499981, y: .239999995}
+      - {x: 5.55499983, y: .230000004}
+      - {x: 5.49499989, y: .200000003}
 --- !u!61 &606679146
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -526,8 +532,8 @@ BoxCollider2D:
   m_Offset: {x: .0605335236, y: -.30267477}
   serializedVersion: 2
   m_Size: {x: 11.6401215, y: .674650431}
---- !u!61 &606679147
-BoxCollider2D:
+--- !u!60 &606679148
+PolygonCollider2D:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
@@ -536,9 +542,15 @@ BoxCollider2D:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_UsedByEffector: 0
-  m_Offset: {x: -4.68712759, y: .310000002}
-  serializedVersion: 2
-  m_Size: {x: 2.69574451, y: .594204187}
+  m_Offset: {x: 0, y: 0}
+  m_Points:
+    m_Paths:
+    - - {x: -5.9369812, y: .712781072}
+      - {x: -5.74268436, y: .05064895}
+      - {x: -.724112511, y: .0109420568}
+    - - {x: 4.53340054, y: -.024286855}
+      - {x: 5.88147116, y: .572018027}
+      - {x: 5.21516657, y: .0134446025}
 --- !u!1 &788677029
 GameObject:
   m_ObjectHideFlags: 0
