@@ -40,6 +40,6 @@ public class SpawnedFish : MonoBehaviour {
 	}
 
 	public void onHooked(){
-		Debug.Log (name + " was hooked!");
+//		Debug.Log (name + " was hooked!");
 	}
 }

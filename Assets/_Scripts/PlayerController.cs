@@ -20,13 +20,19 @@ public class PlayerController : MonoBehaviour {
 	public GameController gameController;
 
 	public GameObject hookPrefab;
-	private Hook hook;
+	private GameObject hook;
+
+	public GameObject ghostHand;
+
 	// Use this for initialization
 	void Start () {
 		rigidBody = GetComponent<Rigidbody2D>();
-		Vector3 hookPosition = new Vector3 (0, -2f, 0f);
-		GameObject hookGameObject = (GameObject) Instantiate(hookPrefab, hookPosition, transform.rotation);
-		hook = hookGameObject.GetComponent (typeof(Hook)) as Hook ;
+		//spawnHook ();
+
+		ghostHand = transform.Find ("ghostHand").gameObject;
+		ghostHand.GetComponent<Hand>().player = gameObject;
+		ghostHand.GetComponent<Hand>().generateNewFish ();
+
 	}
 	
 	// Update is called once per frame
@@ -68,5 +74,28 @@ public class PlayerController : MonoBehaviour {
 		if (Mathf.Abs(rigidBody.velocity.x) > maxSpeed) {
 			rigidBody.velocity = new Vector2(Mathf.Sign(rigidBody.velocity.x) * maxSpeed, rigidBody.velocity.y);
 		}
+	}
+
+	public bool	onHooked(GameObject fish){
+		bool hooked = ghostHand.GetComponent<Hand>().attachFish (fish);
+		if (hooked) {
+			Destroy (hook);
+		}
+		return hooked;
+	}
+	
+	public bool onDisarmed(){
+		spawnHook ();
+		return true;
+	}
+	
+	public void spawnHook(){
+
+		Vector3 hookPosition = new Vector3 (0, -2f, 0f);
+		hook = (GameObject)Instantiate (hookPrefab, hookPosition, transform.rotation);
+		hook.GetComponent<Hook>().player = gameObject;
+		hook.transform.parent = gameObject.transform;
+		hook.transform.localPosition = new Vector3 (0, -4, 0);
+		hook.GetComponent<SpriteRenderer>().color = gameObject.GetComponent<SpriteRenderer>().color
 	}
 }
