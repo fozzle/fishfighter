@@ -39,8 +39,8 @@ public class PlayerController : MonoBehaviour {
 	void FixedUpdate () {
 
 		// cache horizontal
-		float h = Input.GetAxis("HorizontalPlayer");
-		Debug.Log (h);
+		float h = Input.GetAxis("HorizontalPlayer")+Input.GetAxis("HorizontalKeys");
+		//Debug.Log (h);
 		if (rigidBody.position.y < -4.0) {
 			rigidBody.position = new Vector3(0,1,0);
 			rigidBody.velocity = Vector3.zero;
