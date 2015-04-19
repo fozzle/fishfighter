@@ -139,7 +139,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 31688843}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 2.4000001, z: 0}
+  m_LocalPosition: {x: 0, y: 2.08999991, z: 0}
   m_LocalScale: {x: 1, y: .150000006, z: 1}
   m_Children: []
   m_Father: {fileID: 950723793}
@@ -609,11 +609,38 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 788677029}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 3, z: -10}
+  m_LocalPosition: {x: 0, y: .409999996, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
+--- !u!1 &797450097
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 797450098}
+  m_Layer: 8
+  m_Name: FishSpawnRight
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &797450098
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 797450097}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 9.92000008, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1687920107}
+  m_RootOrder: 1
 --- !u!1 &851685501
 GameObject:
   m_ObjectHideFlags: 0
@@ -850,7 +877,7 @@ Rigidbody2D:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1002063782}
-  m_Mass: .5
+  m_Mass: 4
   m_LinearDrag: 0
   m_AngularDrag: .0500000007
   m_GravityScale: 1
@@ -981,9 +1008,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b013b13b5cc4846dc9b8043c873887d0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stabForceBaseMagnitude: 20
-  fish: {fileID: 1002063782}
-  stabForceMultiplier: 200
+  stabForceBaseMagnitude: 0
+  fish: {fileID: 0}
+  stabForceMultiplier: 0
   rotationSpeed: 500
 --- !u!234 &1253930976
 SliderJoint2D:
@@ -1005,7 +1032,7 @@ SliderJoint2D:
   m_UseLimits: 1
   m_TranslationLimits:
     m_LowerTranslation: 0
-    m_UpperTranslation: 1.5
+    m_UpperTranslation: 1
 --- !u!50 &1253930977
 Rigidbody2D:
   m_ObjectHideFlags: 0
@@ -1034,7 +1061,7 @@ SpringJoint2D:
   m_ConnectedAnchor: {x: 0, y: 0}
   m_Distance: .200000003
   m_DampingRatio: .180000007
-  m_Frequency: 1.47000003
+  m_Frequency: 1
 --- !u!1 &1687920105
 GameObject:
   m_ObjectHideFlags: 0
@@ -1044,6 +1071,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 1687920107}
   - 114: {fileID: 1687920106}
+  - 114: {fileID: 1687920108}
   m_Layer: 8
   m_Name: GameObject
   m_TagString: Untagged
@@ -1070,11 +1098,31 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1687920105}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1, z: 0}
+  m_LocalPosition: {x: 0, y: -1.02999997, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 1867795929}
+  - {fileID: 797450098}
   m_Father: {fileID: 0}
   m_RootOrder: 3
+--- !u!114 &1687920108
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1687920105}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 130016f0462fb554eaf7ed2be848908d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spawnTime: 3
+  spawnDelay: 0
+  fishOptions:
+  - {fileID: 0}
+  spawnTransforms:
+  - {fileID: 1867795929}
+  - {fileID: 797450098}
 --- !u!1 &1691570601
 GameObject:
   m_ObjectHideFlags: 0
@@ -1187,3 +1235,30 @@ Transform:
   m_Children: []
   m_Father: {fileID: 950723793}
   m_RootOrder: 1
+--- !u!1 &1867795928
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1867795929}
+  m_Layer: 8
+  m_Name: FishSpawnLeft
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1867795929
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1867795928}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -9.97000027, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1687920107}
+  m_RootOrder: 0
