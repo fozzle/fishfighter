@@ -1119,7 +1119,7 @@ MonoBehaviour:
   spawnTime: 3
   spawnDelay: 0
   fishOptions:
-  - {fileID: 0}
+  - {fileID: 159142, guid: cd7f367e8b65e8841a73599a0b539a95, type: 2}
   spawnTransforms:
   - {fileID: 1867795929}
   - {fileID: 797450098}
