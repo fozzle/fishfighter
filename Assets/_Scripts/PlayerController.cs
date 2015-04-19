@@ -33,6 +33,7 @@ public class PlayerController : MonoBehaviour {
 	void Update () {
 		// Check if on the ground
 		grounded = Physics2D.Linecast(transform.position, groundCheckLeft.position, whatIsGround) || Physics2D.Linecast(transform.position, groundCheckRight.position, whatIsGround);
+		Debug.Log (grounded);
 		if (Input.GetAxis ("Jump") <= 0) {
 			jumpAvailable = true;
 		}
