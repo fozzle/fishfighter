@@ -981,7 +981,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b013b13b5cc4846dc9b8043c873887d0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  parentTransform: {fileID: 0}
+  stabForceMagnitude: 1500
+  fish: {fileID: 1002063782}
   rotationSpeed: 500
 --- !u!234 &1253930976
 SliderJoint2D:

@@ -4,20 +4,26 @@ using System.Collections;
 public class Hand : MonoBehaviour {
 
 	private Transform transform;
-	private GameObject fish;
-	public Transform parentTransform;
+	public float stabForceMagnitude;
+	public GameObject fish;
 	public float rotationSpeed;
 
 	// Use this for initialization
 	void Start () {
 		transform = GetComponent<Transform>();
-		fish = GameObject.Find ("Fish");
 	}
-	
+
 	// Update is called once per frame
 	void Update () {
-
-
+		bool stabby = Input.GetButtonDown("Stab");
+		if (stabby) {
+			Vector2 stabForce = new Vector2(transform.up.x, transform.up.y);
+			stabForce = stabForce * stabForceMagnitude;
+			Debug.Log("stabbyscale" + stabForce + " " + stabForceMagnitude);
+			Vector2.ClampMagnitude(stabForce, stabForceMagnitude);
+			fish.GetComponent<Rigidbody2D>().AddForce(stabForce);
+			Debug.Log ("stabby " + stabForce + " " + transform.up);
+		}
 	}
 
 	void FixedUpdate() {
