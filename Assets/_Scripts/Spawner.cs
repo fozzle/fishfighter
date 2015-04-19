@@ -22,8 +22,9 @@ public class Spawner : MonoBehaviour
 				float split = range / ((float) (fishCountBySize[fishCountIndex] + 1));
 				int slot = spawnCount + 1;
 				float xPos = ((float)slot * split) + (-.5f * range);
-				Debug.Log (xPos);
+
 				float yPos = .5f +(-1.25f * size);
+
 				Vector2 newPosition = new Vector2( xPos, yPos);
 
 

@@ -27,7 +27,7 @@ public class SpawnedFish : MonoBehaviour {
 	}
 
 	public void setDirection(int newDirection){
-		transform.localScale = new Vector2((float)newDirection * Mathf.Abs(transform.localScale.x), transform.localScale.y);
+		transform.localScale = new Vector2((float)newDirection * Mathf.Abs(transform.localScale.x) * -1, transform.localScale.y);
 		direction = newDirection;
 		//Debug.Log(newDirection);
 	}
