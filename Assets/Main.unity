@@ -1103,6 +1103,7 @@ Transform:
   m_Children:
   - {fileID: 1867795929}
   - {fileID: 797450098}
+  - {fileID: 1698132357}
   m_Father: {fileID: 0}
   m_RootOrder: 3
 --- !u!114 &1687920108
@@ -1121,8 +1122,8 @@ MonoBehaviour:
   fishOptions:
   - {fileID: 159142, guid: cd7f367e8b65e8841a73599a0b539a95, type: 2}
   spawnTransforms:
-  - {fileID: 1867795929}
-  - {fileID: 797450098}
+  - {fileID: 1698132357}
+  fishCountBySize: 040000000300000002000000
 --- !u!1 &1691570601
 GameObject:
   m_ObjectHideFlags: 0
@@ -1151,6 +1152,33 @@ Transform:
   m_Children:
   - {fileID: 1253930974}
   m_Father: {fileID: 473120835}
+  m_RootOrder: 2
+--- !u!1 &1698132356
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1698132357}
+  m_Layer: 8
+  m_Name: FishSpawnMiddle
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1698132357
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1698132356}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1687920107}
   m_RootOrder: 2
 --- !u!1 &1842528553
 GameObject:
