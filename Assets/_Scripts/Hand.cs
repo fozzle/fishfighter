@@ -3,25 +3,26 @@ using System.Collections;
 
 public class Hand : MonoBehaviour {
 
-	private Transform transform;
-	public float stabForceMagnitude;
+	private Transform handTransform;
+	public float stabForceBaseMagnitude;
 	public GameObject fish;
+	public float stabForceMultiplier;
 	public float rotationSpeed;
 
 	// Use this for initialization
 	void Start () {
-		transform = GetComponent<Transform>();
+		handTransform = GetComponent<Transform>();
 	}
 
 	// Update is called once per frame
 	void Update () {
 		bool stabby = Input.GetButtonDown("Stab");
 		if (stabby) {
-			Vector2 stabForce = new Vector2(transform.up.x, transform.up.y);
-			stabForce = stabForce * stabForceMagnitude;
-			Debug.Log("stabbyscale" + stabForce + " " + stabForceMagnitude);
-			Vector2.ClampMagnitude(stabForce, stabForceMagnitude);
-			fish.GetComponent<Rigidbody2D>().AddForce(stabForce);
+			Rigidbody2D fishBody = fish.GetComponent<Rigidbody2D>();
+			Vector2 stabForce = new Vector2(handTransform.up.x, handTransform.up.y);
+			stabForce = stabForce * stabForceBaseMagnitude * fishBody.mass * stabForceMultiplier;
+			stabForce = Vector2.ClampMagnitude(stabForce, stabForceBaseMagnitude + (fishBody.mass * stabForceMultiplier));
+			fishBody.AddForce(stabForce);
 			Debug.Log ("stabby " + stabForce + " " + transform.up);
 		}
 	}
@@ -34,7 +35,7 @@ public class Hand : MonoBehaviour {
 		}
 
 		float angle = -Mathf.Atan2(hInput, vInput);
-		transform.rotation = Quaternion.RotateTowards(transform.rotation, Quaternion.Euler(0, 0, angle * Mathf.Rad2Deg), rotationSpeed * Time.deltaTime);
+		handTransform.rotation = Quaternion.RotateTowards(handTransform.rotation, Quaternion.Euler(0, 0, angle * Mathf.Rad2Deg), rotationSpeed * Time.deltaTime);
 		//fish.transform.rotation = Quaternion.RotateTowards(fish.transform.rotation, Quaternion.Euler(0, 0, angle * Mathf.Rad2Deg - 90), rotationSpeed *.5f * Time.deltaTime);
 	}
 }
