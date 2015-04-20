@@ -7,6 +7,7 @@ public class PlayerController : MonoBehaviour {
 	private bool jump = false;
 	private bool jumpAvailable = false;
 	private Rigidbody2D rigidBody;
+	private Animator anim;
 	public float maxSpeed;
 	public float moveForce;
 	public float jumpForce;
@@ -33,12 +34,15 @@ public class PlayerController : MonoBehaviour {
 		ghostHand.GetComponent<Hand>().player = gameObject;
 		ghostHand.GetComponent<Hand>().generateNewFish ();
 
+		anim = GetComponent<Animator>();
+
 	}
 	
 	// Update is called once per frame
 	void Update () {
 		// Check if on the ground
 		grounded = Physics2D.Linecast(transform.position, groundCheckLeft.position, whatIsGround) || Physics2D.Linecast(transform.position, groundCheckRight.position, whatIsGround);
+		//Debug.Log (grounded);
 		if (Input.GetAxis ("Jump") <= 0) {
 			jumpAvailable = true;
 		}
@@ -52,6 +56,9 @@ public class PlayerController : MonoBehaviour {
 
 		// cache horizontal
 		float h = Input.GetAxis("HorizontalPlayer")+Input.GetAxis("HorizontalKeys");
+
+		anim.SetFloat("Speed", Mathf.Abs(h));
+
 		//Debug.Log (h);
 		if (rigidBody.position.y < -5.0) {
 			rigidBody.position = new Vector3(0,1,0);
@@ -96,6 +103,6 @@ public class PlayerController : MonoBehaviour {
 		hook.GetComponent<Hook>().player = gameObject;
 		hook.transform.parent = gameObject.transform;
 		hook.transform.localPosition = new Vector3 (0, -4, 0);
-		hook.GetComponent<SpriteRenderer>().color = gameObject.GetComponent<SpriteRenderer>().color
+		hook.GetComponent<SpriteRenderer> ().color = gameObject.transform.Find ("Body").gameObject.GetComponent<SpriteRenderer> ().color;
 	}
 }
