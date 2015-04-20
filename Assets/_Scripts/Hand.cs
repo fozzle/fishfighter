@@ -38,7 +38,7 @@ public class Hand : MonoBehaviour {
 			Vector2 stabForce = new Vector2(handTransform.up.x, handTransform.up.y);
 			stabForce = stabForce * stabForceBaseMagnitude * fishBody.mass * stabForceMultiplier;
 			stabForce = Vector2.ClampMagnitude(stabForce, stabForceBaseMagnitude + (fishBody.mass * stabForceMultiplier));
-			fishBody.velocity = stabForce;
+			fishBody.velocity = stabForce + player.GetComponent<Rigidbody2D>().velocity;
 
 		}
 
