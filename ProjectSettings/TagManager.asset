@@ -3,7 +3,9 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Player2FishWeapon
+  - Player1FishWeapon
   layers:
   - Default
   - TransparentFX
@@ -17,7 +19,7 @@ TagManager:
   - Player1FishWeapon
   - DestructibleEnvironment
   - Fish
-  - 
+  - DisarmedFish
   - Player2
   - Player2FishWeapon
   - GUI

@@ -72,6 +72,8 @@ public class Hand : MonoBehaviour {
 		newFishInHand.transform.localPosition = new Vector3 (0, 0, 0);
 		newFishInHand.transform.localRotation = Quaternion.Euler (0, 0, -90);
 		newFishInHand.layer = LayerMask.NameToLayer(player.GetComponent<PlayerController>().fishLayer);
+		newFishInHand.tag = player.GetComponent<PlayerController>().fishLayer;
+		newFishInHand.GetComponent<Deflection>().player = player;
 
 		// attach fish to slider joint of handSprite
 		handSprite.GetComponent <SliderJoint2D> ().connectedBody = newFishInHand.GetComponent<Rigidbody2D> ();
