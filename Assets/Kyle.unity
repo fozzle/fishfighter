@@ -1209,6 +1209,9 @@ MonoBehaviour:
   horizontalArmKeys: Player2HorizontalArmKeys
   verticalArmKeys: Player2VerticalArmKeys
   stabButton: Player2Stab
+  handSprite: {fileID: 0}
+  fishInHandPrefab: {fileID: 0}
+  player: {fileID: 0}
 --- !u!1 &1275288042
 GameObject:
   m_ObjectHideFlags: 0
@@ -1537,6 +1540,7 @@ MonoBehaviour:
     m_Bits: 1
   gameController: {fileID: 0}
   hookPrefab: {fileID: 151646, guid: c9d398328a397f140a5f2bb173fd3b77, type: 2}
+  ghostHand: {fileID: 0}
 --- !u!50 &1822231816
 Rigidbody2D:
   m_ObjectHideFlags: 0
@@ -1773,6 +1777,9 @@ MonoBehaviour:
   horizontalArmKeys: Player1HorizontalArmKeys
   verticalArmKeys: Player1VerticalArmKeys
   stabButton: Player1Stab
+  handSprite: {fileID: 0}
+  fishInHandPrefab: {fileID: 0}
+  player: {fileID: 0}
 --- !u!1 &1863155492
 GameObject:
   m_ObjectHideFlags: 0
@@ -1864,6 +1871,7 @@ MonoBehaviour:
     m_Bits: 1
   gameController: {fileID: 0}
   hookPrefab: {fileID: 151646, guid: c9d398328a397f140a5f2bb173fd3b77, type: 2}
+  ghostHand: {fileID: 0}
 --- !u!50 &1863155497
 Rigidbody2D:
   m_ObjectHideFlags: 0
