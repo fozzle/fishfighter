@@ -36,7 +36,6 @@ public class PlayerController : MonoBehaviour {
 		ghostHand = transform.Find ("ghostHand").gameObject;
 		ghostHand.GetComponent<Hand>().player = gameObject;
 		ghostHand.GetComponent<Hand>().generateNewFish ();
-
 		anim = GetComponent<Animator>();
 
 	}
