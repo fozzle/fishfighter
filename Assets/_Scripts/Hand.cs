@@ -28,10 +28,10 @@ public class Hand : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		bool toss = Input.GetButtonDown ("Cancel");
-		if (toss && fish) {
-			Destroy (fish);
-			player.GetComponent<PlayerController>().onDisarmed();
-		}
+//		if (toss && fish) {
+//			Destroy (fish);
+//			player.GetComponent<PlayerController>().onDisarmed();
+//		}
 		bool stabby = Input.GetButtonDown(stabButton);
 		if (stabby && fish) {
 			Rigidbody2D fishBody = fish.GetComponent<Rigidbody2D>();

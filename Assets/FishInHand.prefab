@@ -70,9 +70,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a9929b5d7a3b643a98994b6feee9d1a3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  deflectionChance: .100000001
-  deflectionForceMultiplier: 3
+  deflectionChance: .0700000003
+  deflectionForceMultiplier: 6
   deflectionTorque: 1
+  player: {fileID: 0}
 --- !u!212 &21209242
 SpriteRenderer:
   m_ObjectHideFlags: 1
