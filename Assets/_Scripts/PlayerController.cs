@@ -11,6 +11,9 @@ public class PlayerController : MonoBehaviour {
 	public float maxSpeed;
 	public float moveForce;
 	public float jumpForce;
+	public string jumpAxis;
+	public string horizontalAxis;
+	public string horizontalKeys;
 
 	// Grounded doo doo
 	private bool grounded = false;
@@ -36,10 +39,10 @@ public class PlayerController : MonoBehaviour {
 		// Check if on the ground
 		grounded = Physics2D.Linecast(transform.position, groundCheckLeft.position, whatIsGround) || Physics2D.Linecast(transform.position, groundCheckRight.position, whatIsGround);
 		Debug.Log (grounded);
-		if (Input.GetAxis ("Jump") <= 0) {
+		if (Input.GetAxis (jumpAxis) <= 0) {
 			jumpAvailable = true;
 		}
-		if (grounded && Input.GetAxis ("Jump") > 0 && !jump && jumpAvailable) {
+		if (grounded && Input.GetAxis (jumpAxis) > 0 && !jump && jumpAvailable) {
 			jump = true;
 		}
 	}
@@ -48,7 +51,7 @@ public class PlayerController : MonoBehaviour {
 	void FixedUpdate () {
 
 		// cache horizontal
-		float h = Input.GetAxis("HorizontalPlayer")+Input.GetAxis("HorizontalKeys");
+		float h = Input.GetAxis(horizontalAxis)+Input.GetAxis(horizontalKeys);
 
 		anim.SetFloat("Speed", Mathf.Abs(h));
 

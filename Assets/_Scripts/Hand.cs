@@ -8,6 +8,11 @@ public class Hand : MonoBehaviour {
 	public GameObject fish;
 	public float stabForceMultiplier;
 	public float rotationSpeed;
+	public string horizontalArmAxis;
+	public string verticalArmAxis;
+	public string horizontalArmKeys;
+	public string verticalArmKeys;
+	public string stabButton;
 
 	// Use this for initialization
 	void Start () {
@@ -16,7 +21,7 @@ public class Hand : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
-		bool stabby = Input.GetButtonDown("Stab");
+		bool stabby = Input.GetButtonDown(stabButton);
 		if (stabby) {
 			Rigidbody2D fishBody = fish.GetComponent<Rigidbody2D>();
 			Vector2 stabForce = new Vector2(handTransform.up.x, handTransform.up.y);
@@ -28,8 +33,8 @@ public class Hand : MonoBehaviour {
 	}
 
 	void FixedUpdate() {
-		float hInput = Input.GetAxis("HorizontalArm") + Input.GetAxis ("HorizontalArmKeys");
-		float vInput = Input.GetAxis ("VerticalArm") + Input.GetAxis ("VerticalArmKeys");
+		float hInput = Input.GetAxis(horizontalArmAxis) + Input.GetAxis(horizontalArmKeys);
+		float vInput = Input.GetAxis(verticalArmAxis) + Input.GetAxis(verticalArmKeys);
 		if (hInput == 0 && vInput == 0) {
 			return;
 		}
