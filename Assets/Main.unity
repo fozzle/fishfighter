@@ -261,7 +261,7 @@ Canvas:
   m_Enabled: 1
   serializedVersion: 2
   m_RenderMode: 0
-  m_Camera: {fileID: 0}
+  m_Camera: {fileID: 788677033}
   m_PlaneDistance: 100
   m_PixelPerfect: 0
   m_ReceivesEvents: 1
@@ -317,9 +317,9 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 66038872}
   m_RootOrder: 0
-  m_AnchorMin: {x: .5, y: .5}
-  m_AnchorMax: {x: .5, y: .5}
-  m_AnchoredPosition: {x: 387.899994, y: 233.619995}
+  m_AnchorMin: {x: 1, y: 1}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: -80, y: 0}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: .5, y: .5}
 --- !u!114 &75562243
@@ -546,7 +546,7 @@ SliderJoint2D:
   m_UseLimits: 1
   m_TranslationLimits:
     m_LowerTranslation: 0
-    m_UpperTranslation: 1
+    m_UpperTranslation: .600000024
 --- !u!50 &426146833
 Rigidbody2D:
   m_ObjectHideFlags: 0
@@ -615,9 +615,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b013b13b5cc4846dc9b8043c873887d0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stabForceBaseMagnitude: 1
+  stabForceBaseMagnitude: 4
   fish: {fileID: 0}
-  stabForceMultiplier: 2
+  stabForceMultiplier: 1
   rotationSpeed: 500
   horizontalArmAxis: Player1HorizontalAxisArm
   verticalArmAxis: Player1VerticalAxisArm
@@ -828,7 +828,7 @@ MonoBehaviour:
   playerIndex: 0
   maxSpeed: 6
   moveForce: 4
-  jumpForce: 175
+  jumpForce: 150
   jumpAxis: Player1Jump
   horizontalAxis: Player1HorizontalAxis
   horizontalKeys: Player1HorizontalKeys
@@ -1106,9 +1106,9 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 66038872}
   m_RootOrder: 1
-  m_AnchorMin: {x: .5, y: .5}
-  m_AnchorMax: {x: .5, y: .5}
-  m_AnchoredPosition: {x: -427.600006, y: 233.619995}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 80, y: 0}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: .5, y: .5}
 --- !u!114 &920863283
@@ -1712,7 +1712,7 @@ MonoBehaviour:
   playerIndex: 1
   maxSpeed: 6
   moveForce: 4
-  jumpForce: 175
+  jumpForce: 150
   jumpAxis: Player2Jump
   horizontalAxis: Player2HorizontalAxis
   horizontalKeys: Player2HorizontalKeys
@@ -2042,7 +2042,7 @@ SliderJoint2D:
   m_UseLimits: 1
   m_TranslationLimits:
     m_LowerTranslation: 0
-    m_UpperTranslation: 1
+    m_UpperTranslation: .600000024
 --- !u!50 &1972940362
 Rigidbody2D:
   m_ObjectHideFlags: 0
@@ -2124,9 +2124,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b013b13b5cc4846dc9b8043c873887d0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stabForceBaseMagnitude: 1
+  stabForceBaseMagnitude: 4
   fish: {fileID: 0}
-  stabForceMultiplier: 2
+  stabForceMultiplier: 1
   rotationSpeed: 500
   horizontalArmAxis: Player2HorizontalAxisArm
   verticalArmAxis: Player2VerticalAxisArm
