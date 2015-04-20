@@ -13,13 +13,13 @@ TagManager:
   - UI
   - 
   - 
-  - Player
-  - FishWeapon
+  - Player1
+  - Player1FishWeapon
   - DestructibleEnvironment
   - Fish
   - Hook
-  - 
-  - 
+  - Player2
+  - Player2FishWeapon
   - 
   - 
   - 

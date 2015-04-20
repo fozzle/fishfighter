@@ -38,8 +38,8 @@ public class Hand : MonoBehaviour {
 			Vector2 stabForce = new Vector2(handTransform.up.x, handTransform.up.y);
 			stabForce = stabForce * stabForceBaseMagnitude * fishBody.mass * stabForceMultiplier;
 			stabForce = Vector2.ClampMagnitude(stabForce, stabForceBaseMagnitude + (fishBody.mass * stabForceMultiplier));
-			fishBody.AddForce(stabForce);
-			Debug.Log ("stabby " + stabForce + " " + transform.up);
+			fishBody.velocity = stabForce;
+
 		}
 
 	}
@@ -71,6 +71,7 @@ public class Hand : MonoBehaviour {
 		newFishInHand.transform.parent = handSprite.transform;
 		newFishInHand.transform.localPosition = new Vector3 (0, 0, 0);
 		newFishInHand.transform.localRotation = Quaternion.Euler (0, 0, -90);
+		newFishInHand.layer = LayerMask.NameToLayer(player.GetComponent<PlayerController>().fishLayer);
 
 		// attach fish to slider joint of handSprite
 		handSprite.GetComponent <SliderJoint2D> ().connectedBody = newFishInHand.GetComponent<Rigidbody2D> ();

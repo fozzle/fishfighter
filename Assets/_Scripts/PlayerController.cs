@@ -14,6 +14,7 @@ public class PlayerController : MonoBehaviour {
 	public string jumpAxis;
 	public string horizontalAxis;
 	public string horizontalKeys;
+	public string fishLayer;
 
 	// Grounded doo doo
 	private bool grounded = false;

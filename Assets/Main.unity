@@ -361,7 +361,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 91811690}
-  m_Layer: 8
+  m_Layer: 13
   m_Name: GroundCheckLeft
   m_TagString: Untagged
   m_Icon: {fileID: 3936346786652291628, guid: 0000000000000000d000000000000000, type: 0}
@@ -388,7 +388,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 105042130}
-  m_Layer: 8
+  m_Layer: 13
   m_Name: GroundCheckRight
   m_TagString: Untagged
   m_Icon: {fileID: 3936346786652291628, guid: 0000000000000000d000000000000000, type: 0}
@@ -492,7 +492,7 @@ GameObject:
   - 50: {fileID: 426146833}
   - 234: {fileID: 426146832}
   - 231: {fileID: 426146831}
-  m_Layer: 8
+  m_Layer: 13
   m_Name: handSprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -614,9 +614,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b013b13b5cc4846dc9b8043c873887d0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stabForceBaseMagnitude: 20
+  stabForceBaseMagnitude: 1
   fish: {fileID: 0}
-  stabForceMultiplier: 200
+  stabForceMultiplier: 3
   rotationSpeed: 500
   horizontalArmAxis: Player1HorizontalAxisArm
   verticalArmAxis: Player1VerticalAxisArm
@@ -830,6 +830,7 @@ MonoBehaviour:
   jumpAxis: Player1Jump
   horizontalAxis: Player1HorizontalAxis
   horizontalKeys: Player1HorizontalKeys
+  fishLayer: Player1FishWeapon
   groundCheckLeft: {fileID: 922581198}
   groundCheckRight: {fileID: 22149958}
   groundRadius: .200000003
@@ -1279,7 +1280,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 1057501878}
   - 212: {fileID: 1057501879}
-  m_Layer: 8
+  m_Layer: 13
   m_Name: Body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1479,7 +1480,7 @@ GameObject:
   - 114: {fileID: 1740204594}
   - 61: {fileID: 1740204593}
   - 95: {fileID: 1740204592}
-  m_Layer: 8
+  m_Layer: 13
   m_Name: Player2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1550,6 +1551,7 @@ MonoBehaviour:
   jumpAxis: Player2Jump
   horizontalAxis: Player2HorizontalAxis
   horizontalKeys: Player2HorizontalKeys
+  fishLayer: Player2FishWeapon
   groundCheckLeft: {fileID: 91811690}
   groundCheckRight: {fileID: 105042130}
   groundRadius: .200000003
@@ -1765,7 +1767,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 1930646095}
   - 212: {fileID: 1930646094}
-  m_Layer: 8
+  m_Layer: 13
   m_Name: Legs
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1926,7 +1928,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 2012080219}
   - 114: {fileID: 2012080220}
-  m_Layer: 8
+  m_Layer: 13
   m_Name: ghostHand
   m_TagString: Untagged
   m_Icon: {fileID: -1089502233064743932, guid: 0000000000000000d000000000000000, type: 0}
@@ -1957,9 +1959,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b013b13b5cc4846dc9b8043c873887d0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stabForceBaseMagnitude: 20
+  stabForceBaseMagnitude: 1
   fish: {fileID: 0}
-  stabForceMultiplier: 200
+  stabForceMultiplier: 3
   rotationSpeed: 500
   horizontalArmAxis: Player2HorizontalAxisArm
   verticalArmAxis: Player2VerticalAxisArm
