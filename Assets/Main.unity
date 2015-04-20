@@ -281,7 +281,7 @@ RectTransform:
   m_Children:
   - {fileID: 75562242}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
@@ -587,57 +587,6 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300002, guid: f2242e338042941359a4e0a83c58ff32, type: 3}
   m_Color: {r: 1, g: .595588207, b: .595588207, a: 1}
---- !u!1 &503944075
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 4
-  m_Component:
-  - 4: {fileID: 503944076}
-  - 114: {fileID: 503944077}
-  m_Layer: 8
-  m_Name: ghostHand
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &503944076
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 503944075}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 3
---- !u!114 &503944077
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 503944075}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b013b13b5cc4846dc9b8043c873887d0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  stabForceBaseMagnitude: 20
-  fish: {fileID: 0}
-  stabForceMultiplier: 200
-  rotationSpeed: 500
-  horizontalArmAxis: 
-  verticalArmAxis: 
-  horizontalArmKeys: 
-  verticalArmKeys: 
-  stabButton: 
-  handSprite: {fileID: 0}
-  fishInHandPrefab: {fileID: 115668, guid: 825ef416a390d9446a36dd65770f9fef, type: 2}
-  player: {fileID: 0}
 --- !u!1 &586506552
 GameObject:
   m_ObjectHideFlags: 0
@@ -674,9 +623,9 @@ MonoBehaviour:
   horizontalArmKeys: Player1HorizontalArmKeys
   verticalArmKeys: Player1VerticalArmKeys
   stabButton: Player1Stab
-  handSprite: {fileID: 0}
-  fishInHandPrefab: {fileID: 0}
-  player: {fileID: 0}
+  handSprite: {fileID: 1972940358}
+  fishInHandPrefab: {fileID: 115668, guid: 825ef416a390d9446a36dd65770f9fef, type: 2}
+  player: {fileID: 713807574}
 --- !u!4 &586506554
 Transform:
   m_ObjectHideFlags: 0
@@ -887,7 +836,7 @@ MonoBehaviour:
   whatIsGround:
     serializedVersion: 2
     m_Bits: 1
-  gameController: {fileID: 0}
+  gameController: {fileID: 1687920106}
   hookPrefab: {fileID: 151646, guid: c9d398328a397f140a5f2bb173fd3b77, type: 2}
   ghostHand: {fileID: 0}
 --- !u!50 &713807579
@@ -1025,7 +974,6 @@ GameObject:
   m_Component:
   - 4: {fileID: 851685505}
   - 114: {fileID: 851685504}
-  - 114: {fileID: 851685503}
   - 114: {fileID: 851685502}
   m_Layer: 0
   m_Name: EventSystem
@@ -1046,23 +994,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_AllowActivationOnStandalone: 0
---- !u!114 &851685503
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 851685501}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 1077351063, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_HorizontalAxis: HorizontalPlayer
-  m_VerticalAxis: Jump
-  m_SubmitButton: Submit
-  m_CancelButton: Cancel
-  m_InputActionsPerSecond: 10
-  m_AllowActivationOnMobileDevice: 0
 --- !u!114 &851685504
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1088,7 +1019,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 7
 --- !u!1 &897622514
 GameObject:
   m_ObjectHideFlags: 0
@@ -1200,7 +1131,7 @@ Transform:
   - {fileID: 1000641792}
   - {fileID: 31688844}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 3
 --- !u!1 &1000641791
 GameObject:
   m_ObjectHideFlags: 0
@@ -1490,7 +1421,7 @@ Transform:
   - {fileID: 797450098}
   - {fileID: 1698132357}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 4
 --- !u!114 &1687920108
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1625,7 +1556,7 @@ MonoBehaviour:
   whatIsGround:
     serializedVersion: 2
     m_Bits: 1
-  gameController: {fileID: 0}
+  gameController: {fileID: 1687920106}
   hookPrefab: {fileID: 151646, guid: c9d398328a397f140a5f2bb173fd3b77, type: 2}
   ghostHand: {fileID: 0}
 --- !u!50 &1740204595
@@ -2035,9 +1966,9 @@ MonoBehaviour:
   horizontalArmKeys: Player2HorizontalArmKeys
   verticalArmKeys: Player2VerticalArmKeys
   stabButton: Player2Stab
-  handSprite: {fileID: 0}
-  fishInHandPrefab: {fileID: 0}
-  player: {fileID: 0}
+  handSprite: {fileID: 426146829}
+  fishInHandPrefab: {fileID: 115668, guid: 825ef416a390d9446a36dd65770f9fef, type: 2}
+  player: {fileID: 1740204590}
 --- !u!1 &2015114345
 GameObject:
   m_ObjectHideFlags: 0
@@ -2066,4 +1997,4 @@ Transform:
   - {fileID: 280068072}
   - {fileID: 1825665103}
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 6
