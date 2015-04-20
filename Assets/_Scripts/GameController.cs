@@ -3,15 +3,15 @@ using System.Collections;
 using UnityEngine.UI;
 
 public class GameController : MonoBehaviour {
-
-	public int score;
-	private GameObject myTextgameObject;
+	
+	private int[] scores;
+	private GameObject[] scoreTexts;
 	private Text ourComponent;   
 	// Use this for initialization
 	void Start () {
-		myTextgameObject = GameObject.Find("ScoreText");
-		ourComponent = myTextgameObject.GetComponent<Text>();
-		updateScore(0);
+		scores = new int[] {0,0};
+		scoreTexts = new GameObject[] {GameObject.Find("Player1ScoreText"), GameObject.Find("Player2ScoreText")};
+		refreshScores ();
 	}
 	
 	// Update is called once per frame
@@ -19,12 +19,14 @@ public class GameController : MonoBehaviour {
 	
 	}
 
-	public void modifyScore(int modifier){
-		updateScore(score + modifier);
-	}
+	public void modifyScore(int index, int modifier){
+		scores[index] = scores[index] + modifier;
+		refreshScores ();
+	}	
 
-	void updateScore(int newScore){
-		score = newScore;
-		ourComponent.text = score.ToString();
+	public void refreshScores(){
+		for (int i = 0; i < scores.Length; i++) {
+			scoreTexts [i].GetComponent<Text> ().text = scores [i].ToString ();
+		}
 	}
 }

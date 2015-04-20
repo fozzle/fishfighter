@@ -4,6 +4,7 @@ using System.Collections;
 
 public class PlayerController : MonoBehaviour {
 
+	public int playerIndex;
 	private bool jump = false;
 	private bool jumpAvailable = false;
 	private Rigidbody2D rigidBody;
@@ -65,7 +66,7 @@ public class PlayerController : MonoBehaviour {
 		if (rigidBody.position.y < -5.0) {
 			rigidBody.position = new Vector3(0,1,0);
 			rigidBody.velocity = Vector3.zero;
-			gameController.modifyScore(1);
+			gameController.modifyScore(1-playerIndex, 1);
 		}
 
 		// jumps yo
