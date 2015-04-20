@@ -616,7 +616,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   stabForceBaseMagnitude: 1
   fish: {fileID: 0}
-  stabForceMultiplier: 3
+  stabForceMultiplier: 2
   rotationSpeed: 500
   horizontalArmAxis: Player1HorizontalAxisArm
   verticalArmAxis: Player1VerticalAxisArm
@@ -1961,7 +1961,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   stabForceBaseMagnitude: 1
   fish: {fileID: 0}
-  stabForceMultiplier: 3
+  stabForceMultiplier: 2
   rotationSpeed: 500
   horizontalArmAxis: Player2HorizontalAxisArm
   verticalArmAxis: Player2VerticalAxisArm
