@@ -507,6 +507,53 @@ Transform:
   m_Children: []
   m_Father: {fileID: 2015114346}
   m_RootOrder: 0
+--- !u!1 &503944075
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 503944076}
+  - 114: {fileID: 503944077}
+  m_Layer: 8
+  m_Name: ghostHand
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &503944076
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 503944075}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 1139184395}
+  m_Father: {fileID: 1059685158}
+  m_RootOrder: 2
+--- !u!114 &503944077
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 503944075}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b013b13b5cc4846dc9b8043c873887d0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  stabForceBaseMagnitude: 20
+  fish: {fileID: 0}
+  stabForceMultiplier: 200
+  rotationSpeed: 500
+  handSprite: {fileID: 0}
+  fishInHandPrefab: {fileID: 115668, guid: 825ef416a390d9446a36dd65770f9fef, type: 2}
+  player: {fileID: 0}
 --- !u!1 &606679142
 GameObject:
   m_ObjectHideFlags: 0
@@ -1053,6 +1100,45 @@ BoxCollider2D:
   m_Offset: {x: -1.72697067, y: .0135982037}
   serializedVersion: 2
   m_Size: {x: 4.21000004, y: 1.95000005}
+--- !u!114 &1059685160
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1059685157}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 34e1d8687adc0436d964436e31003cb7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxSpeed: 6
+  moveForce: 4
+  jumpForce: 125
+  groundCheckLeft: {fileID: 794831959}
+  groundCheckRight: {fileID: 1902434078}
+  groundRadius: .200000003
+  whatIsGround:
+    serializedVersion: 2
+    m_Bits: 1
+  gameController: {fileID: 1687920106}
+  hookPrefab: {fileID: 151646, guid: c9d398328a397f140a5f2bb173fd3b77, type: 2}
+  ghostHand: {fileID: 0}
+--- !u!50 &1059685161
+Rigidbody2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1059685157}
+  m_Mass: .5
+  m_LinearDrag: 0
+  m_AngularDrag: .0500000007
+  m_GravityScale: 1
+  m_FixedAngle: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+
 --- !u!212 &1609283747
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1107,6 +1193,56 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1822231813}
   m_RootOrder: 4
+--- !u!231 &1139184396
+SpringJoint2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1139184394}
+  m_Enabled: 0
+  m_EnableCollision: 0
+  m_ConnectedRigidBody: {fileID: 0}
+  m_Anchor: {x: 0, y: 0}
+  m_ConnectedAnchor: {x: 0, y: 0}
+  m_Distance: .200000003
+  m_DampingRatio: .180000007
+  m_Frequency: 1
+--- !u!234 &1139184397
+SliderJoint2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1139184394}
+  m_Enabled: 1
+  m_EnableCollision: 0
+  m_ConnectedRigidBody: {fileID: 0}
+  m_Anchor: {x: 0, y: 0}
+  m_ConnectedAnchor: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Angle: 90
+  m_UseMotor: 1
+  m_Motor:
+    m_MotorSpeed: -2000
+    m_MaximumMotorForce: 60
+  m_UseLimits: 1
+  m_TranslationLimits:
+    m_LowerTranslation: 0
+    m_UpperTranslation: 1
+--- !u!50 &1139184398
+Rigidbody2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1139184394}
+  m_Mass: .5
+  m_LinearDrag: 0
+  m_AngularDrag: .0500000007
+  m_GravityScale: 1
+  m_FixedAngle: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
 --- !u!212 &1616083249
 SpriteRenderer:
   m_ObjectHideFlags: 0

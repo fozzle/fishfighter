@@ -3,9 +3,10 @@ using System.Collections;
 
 public class Hook : MonoBehaviour {
 
+	public GameObject player;
 	// Use this for initialization
 	void Start () {
-	
+		
 	}
 	
 	// Update is called once per frame
@@ -22,9 +23,13 @@ public class Hook : MonoBehaviour {
 	void OnCollisionEnter2D(Collision2D other)
 	{
 		
-		SpawnedFish fish = other.gameObject.GetComponent<SpawnedFish> ();
-		gameObject.GetComponent<Collider2D> ().enabled = false; 
-		fish.onHooked ();
+		GameObject fish = other.gameObject;
+		bool hooked = player.GetComponent<PlayerController> ().onHooked (fish);
+		if (hooked) {
+			fish.GetComponent<SpawnedFish> ().onHooked ();
+			Destroy(fish);
+			//gameObject.GetComponent<Collider2D> ().enabled = false;
+		}
 
 	}
 	
