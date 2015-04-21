@@ -74,6 +74,7 @@ public class Hand : MonoBehaviour {
 		newFishInHand.layer = LayerMask.NameToLayer(player.GetComponent<PlayerController>().fishLayer);
 		newFishInHand.tag = player.GetComponent<PlayerController>().fishLayer;
 		newFishInHand.GetComponent<Deflection>().player = player;
+		newFishInHand.GetComponent<Rigidbody2D>().mass = Random.value * 4 + 2;
 
 		// attach fish to slider joint of handSprite
 		handSprite.GetComponent <SliderJoint2D> ().connectedBody = newFishInHand.GetComponent<Rigidbody2D> ();

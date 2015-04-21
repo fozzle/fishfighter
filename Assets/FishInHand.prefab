@@ -141,8 +141,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   deflectionChance: .0700000003
-  deflectionForceMultiplier: 1000
-  deflectionTorque: 20
+  deflectionForceMultiplier: 70
+  deflectionTorque: 65
   player: {fileID: 0}
 --- !u!212 &21209242
 SpriteRenderer:
