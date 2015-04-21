@@ -652,6 +652,7 @@ GameObject:
   - 61: {fileID: 606679146}
   - 60: {fileID: 606679148}
   - 60: {fileID: 606679145}
+  - 95: {fileID: 606679147}
   m_Layer: 0
   m_Name: Floor
   m_TagString: Untagged
@@ -729,6 +730,23 @@ BoxCollider2D:
   m_Offset: {x: -.146673203, y: -.30267477}
   serializedVersion: 2
   m_Size: {x: 16.3415756, y: .674650431}
+--- !u!95 &606679147
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 606679142}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: bff508dfd96df44f782744d12f2ffac3, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!60 &606679148
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -1474,7 +1492,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 43811cd60ad9a1849a10824f9bb7b2c1, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0
+  m_Volume: .479999989
   m_Pitch: 1
   Loop: 1
   Mute: 0
