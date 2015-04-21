@@ -153,7 +153,7 @@ PlatformEffector2D:
   m_Enabled: 1
   m_ColliderMask:
     serializedVersion: 2
-    m_Bits: 4294966783
+    m_Bits: 4294950399
   m_UseOneWay: 1
   m_UseSideFriction: 0
   m_UseSideBounce: 0
@@ -935,7 +935,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 5
+  orthographic size: 5.80000019
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -1258,7 +1258,7 @@ PlatformEffector2D:
   m_Enabled: 1
   m_ColliderMask:
     serializedVersion: 2
-    m_Bits: 4294966783
+    m_Bits: 4294950399
   m_UseOneWay: 1
   m_UseSideFriction: 0
   m_UseSideBounce: 0
@@ -1858,7 +1858,7 @@ PlatformEffector2D:
   m_Enabled: 1
   m_ColliderMask:
     serializedVersion: 2
-    m_Bits: 4294966783
+    m_Bits: 4294950399
   m_UseOneWay: 1
   m_UseSideFriction: 0
   m_UseSideBounce: 0
