@@ -66,6 +66,8 @@ public class PlayerController : MonoBehaviour {
 		if (rigidBody.position.y < -5.0) {
 			rigidBody.position = new Vector3(0,1,0);
 			rigidBody.velocity = Vector3.zero;
+			Destroy(ghostHand.GetComponent<Hand>().fish);
+			ghostHand.GetComponent<Hand>().generateNewFish();
 			gameController.modifyScore(1-playerIndex, 1);
 		}
 

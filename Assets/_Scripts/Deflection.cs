@@ -7,10 +7,13 @@ public class Deflection : MonoBehaviour {
 	public float deflectionForceMultiplier;
 	public float deflectionTorque;
 	public GameObject player;
+	private AudioSource audioSource;
+	private bool isInitialHit;
 
 	// Use this for initialization
 	void Start () {
-		
+		audioSource = GetComponent<AudioSource>();
+		isInitialHit = true;
 	}
 	
 	// Update is called once per frame
@@ -21,9 +24,11 @@ public class Deflection : MonoBehaviour {
 	}
 
 	void OnCollisionEnter2D(Collision2D collision) {
-		if (collision.gameObject.tag.Equals("Player1FishWeapon") || 
-		    collision.gameObject.tag.Equals ("Player2FishWeapon")) {
+		if ((collision.gameObject.tag.Equals("Player1FishWeapon") || 
+		    collision.gameObject.tag.Equals ("Player2FishWeapon")) &&
+		    isInitialHit) {
 
+			isInitialHit = false;
 			// Deflection
 			float randVal = Random.value;
 			Debug.Log(randVal);
@@ -39,7 +44,15 @@ public class Deflection : MonoBehaviour {
 				player.GetComponent<PlayerController>().onDisarmed();
 
 				// play disarm sound
+				audioSource.Play();
 			}
+		}
+	}
+
+	void OnCollisionExit2D(Collision2D collision) {
+		if (collision.gameObject.tag.Equals("Player1FishWeapon") || 
+		     collision.gameObject.tag.Equals ("Player2FishWeapon")) {
+			isInitialHit = true;
 		}
 	}
 }
